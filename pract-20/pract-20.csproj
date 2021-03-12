@@ -46,6 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ShowRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowRecord.Designer.cs">
+      <DependentUpon>ShowRecord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeRecord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChangeRecord.Designer.cs">
+      <DependentUpon>ChangeRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddRecord.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -65,6 +77,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>unitsAccountDataSet.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ShowRecord.resx">
+      <DependentUpon>ShowRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChangeRecord.resx">
+      <DependentUpon>ChangeRecord.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddRecord.resx">
       <DependentUpon>AddRecord.cs</DependentUpon>
     </EmbeddedResource>
