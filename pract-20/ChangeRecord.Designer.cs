@@ -52,8 +52,8 @@
             this.средаКолвоTextBox = new System.Windows.Forms.TextBox();
             this.четвергКолвоTextBox = new System.Windows.Forms.TextBox();
             this.пятницаКолвоTextBox = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Change = new System.Windows.Forms.Button();
+            this.Cancel = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             фИОLabel = new System.Windows.Forms.Label();
             цехLabel = new System.Windows.Forms.Label();
@@ -262,25 +262,26 @@
             this.пятницаКолвоTextBox.Size = new System.Drawing.Size(100, 20);
             this.пятницаКолвоTextBox.TabIndex = 17;
             // 
-            // button1
+            // Change
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button1.Location = new System.Drawing.Point(13, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(178, 34);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Изменить запись";
-            this.button1.UseVisualStyleBackColor = true;
+            this.Change.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Change.Location = new System.Drawing.Point(13, 332);
+            this.Change.Name = "Change";
+            this.Change.Size = new System.Drawing.Size(178, 34);
+            this.Change.TabIndex = 1;
+            this.Change.Text = "Изменить запись";
+            this.Change.UseVisualStyleBackColor = true;
+            this.Change.Click += new System.EventHandler(this.Change_Click);
             // 
-            // button2
+            // Cancel
             // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.button2.Location = new System.Drawing.Point(244, 332);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(178, 34);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Отмена";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Cancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Cancel.Location = new System.Drawing.Point(244, 332);
+            this.Cancel.Name = "Cancel";
+            this.Cancel.Size = new System.Drawing.Size(178, 34);
+            this.Cancel.TabIndex = 2;
+            this.Cancel.Text = "Отмена";
+            this.Cancel.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -307,8 +308,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(436, 379);
             this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Cancel);
+            this.Controls.Add(this.Change);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
@@ -344,8 +345,8 @@
         private System.Windows.Forms.TextBox средаКолвоTextBox;
         private System.Windows.Forms.TextBox четвергКолвоTextBox;
         private System.Windows.Forms.TextBox пятницаКолвоTextBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button Change;
+        private System.Windows.Forms.Button Cancel;
         private System.Windows.Forms.GroupBox groupBox2;
     }
 }

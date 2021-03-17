@@ -1142,12 +1142,34 @@ namespace pract_20.unitsAccountDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[1];
+            this._commandCollection = new global::System.Data.OleDb.OleDbCommand[3];
             this._commandCollection[0] = new global::System.Data.OleDb.OleDbCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT Цех, ТипИзделия, Стоимость, ПонедельникКолво, ВторникКолво, СредаКолво, Че" +
                 "твергКолво, ПятницаКолво, ФИО FROM Units";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "SELECT Цех, ТипИзделия, Стоимость, ПонедельникКолво, ВторникКолво, СредаКолво, Че" +
+                "твергКолво, ПятницаКолво, ФИО FROM Units\r\nWHERE ФИО = ?";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ФИО", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ФИО", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2] = new global::System.Data.OleDb.OleDbCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "UPDATE  Units\r\nSET         Цех = ?, ТипИзделия = ?, Стоимость = ?, ПонедельникКол" +
+                "во = ?, ВторникКолво = ?, СредаКолво = ?, ЧетвергКолво = ?, ПятницаКолво = ?, ФИ" +
+                "О = ?\r\nWHERE   (ФИО = ?)";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Цех", global::System.Data.OleDb.OleDbType.WChar, 30, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Цех", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ТипИзделия", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ТипИзделия", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Стоимость", global::System.Data.OleDb.OleDbType.Integer, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "Стоимость", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ПонедельникКолво", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ПонедельникКолво", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ВторникКолво", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ВторникКолво", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("СредаКолво", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "СредаКолво", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ЧетвергКолво", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ЧетвергКолво", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ПятницаКолво", global::System.Data.OleDb.OleDbType.SmallInt, 0, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ПятницаКолво", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("ФИО", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ФИО", global::System.Data.DataRowVersion.Current, false, null));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.OleDb.OleDbParameter("Original_ФИО", global::System.Data.OleDb.OleDbType.WChar, 20, global::System.Data.ParameterDirection.Input, ((byte)(0)), ((byte)(0)), "ФИО", global::System.Data.DataRowVersion.Original, false, null));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1169,6 +1191,42 @@ namespace pract_20.unitsAccountDataSetTableAdapters {
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual unitsAccountDataSet.UnitsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            unitsAccountDataSet.UnitsDataTable dataTable = new unitsAccountDataSet.UnitsDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(unitsAccountDataSet.UnitsDataTable dataTable, string ФИО) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ФИО == null)) {
+                throw new global::System.ArgumentNullException("ФИО");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ФИО));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual unitsAccountDataSet.UnitsDataTable GetDataBy1(string ФИО) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            if ((ФИО == null)) {
+                throw new global::System.ArgumentNullException("ФИО");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(ФИО));
+            }
             unitsAccountDataSet.UnitsDataTable dataTable = new unitsAccountDataSet.UnitsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -1555,6 +1613,89 @@ namespace pract_20.unitsAccountDataSetTableAdapters {
                     global::System.Nullable<short> Original_ПятницаКолво, 
                     string Original_ФИО) {
             return this.Update(Цех, ТипИзделия, Стоимость, ПонедельникКолво, ВторникКолво, СредаКолво, ЧетвергКолво, ПятницаКолво, Original_ФИО, Original_Цех, Original_ТипИзделия, Original_Стоимость, Original_ПонедельникКолво, Original_ВторникКолво, Original_СредаКолво, Original_ЧетвергКолво, Original_ПятницаКолво, Original_ФИО);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateRecord(string Цех, string ТипИзделия, global::System.Nullable<int> Стоимость, global::System.Nullable<short> ПонедельникКолво, global::System.Nullable<short> ВторникКолво, global::System.Nullable<short> СредаКолво, global::System.Nullable<short> ЧетвергКолво, global::System.Nullable<short> ПятницаКолво, string ФИО, string Original_ФИО) {
+            global::System.Data.OleDb.OleDbCommand command = this.CommandCollection[2];
+            if ((Цех == null)) {
+                command.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[0].Value = ((string)(Цех));
+            }
+            if ((ТипИзделия == null)) {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[1].Value = ((string)(ТипИзделия));
+            }
+            if ((Стоимость.HasValue == true)) {
+                command.Parameters[2].Value = ((int)(Стоимость.Value));
+            }
+            else {
+                command.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            if ((ПонедельникКолво.HasValue == true)) {
+                command.Parameters[3].Value = ((short)(ПонедельникКолво.Value));
+            }
+            else {
+                command.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((ВторникКолво.HasValue == true)) {
+                command.Parameters[4].Value = ((short)(ВторникКолво.Value));
+            }
+            else {
+                command.Parameters[4].Value = global::System.DBNull.Value;
+            }
+            if ((СредаКолво.HasValue == true)) {
+                command.Parameters[5].Value = ((short)(СредаКолво.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((ЧетвергКолво.HasValue == true)) {
+                command.Parameters[6].Value = ((short)(ЧетвергКолво.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((ПятницаКолво.HasValue == true)) {
+                command.Parameters[7].Value = ((short)(ПятницаКолво.Value));
+            }
+            else {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            if ((ФИО == null)) {
+                throw new global::System.ArgumentNullException("ФИО");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(ФИО));
+            }
+            if ((Original_ФИО == null)) {
+                throw new global::System.ArgumentNullException("Original_ФИО");
+            }
+            else {
+                command.Parameters[9].Value = ((string)(Original_ФИО));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     

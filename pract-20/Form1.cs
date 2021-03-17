@@ -41,9 +41,10 @@ namespace pract_20
 
         private void ChangeRecord_Click(object sender, EventArgs e)
         {
+            ID.id = unitsDataGridView[0, unitsDataGridView.CurrentRow.Index].Value.ToString();            
             ChangeRecord change = new ChangeRecord();
             change.ShowDialog();
-
+            this.unitsTableAdapter.Fill(this.unitsAccountDataSet.Units);
         }
 
         private void ShowRecord_Click(object sender, EventArgs e)
@@ -71,5 +72,9 @@ namespace pract_20
             }
             
         }
+    }
+    public static class ID
+    {
+        public static string id;
     }
 }
