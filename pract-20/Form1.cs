@@ -49,6 +49,7 @@ namespace pract_20
 
         private void ShowRecord_Click(object sender, EventArgs e)
         {
+            ID.id = unitsDataGridView[0, unitsDataGridView.CurrentRow.Index].Value.ToString();
             ShowRecord show = new ShowRecord();
             show.ShowDialog();
         }

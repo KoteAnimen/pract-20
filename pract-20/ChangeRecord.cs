@@ -65,5 +65,10 @@ namespace pract_20
             }
             Close();
         }
+
+        private void Cancel_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }
