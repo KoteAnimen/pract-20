@@ -31,5 +31,45 @@ namespace pract_20
             this.unitsTableAdapter.Fill(this.unitsAccountDataSet.Units);
 
         }
+
+        private void AddRecord_Click(object sender, EventArgs e)
+        {
+            AddRecord add = new AddRecord();
+            add.ShowDialog();
+            this.unitsTableAdapter.Fill(this.unitsAccountDataSet.Units);
+        }
+
+        private void ChangeRecord_Click(object sender, EventArgs e)
+        {
+            ChangeRecord change = new ChangeRecord();
+            change.ShowDialog();
+
+        }
+
+        private void ShowRecord_Click(object sender, EventArgs e)
+        {
+            ShowRecord show = new ShowRecord();
+            show.ShowDialog();
+        }
+
+        private void DeleteRecord_Click(object sender, EventArgs e)
+        {
+            DialogResult result;
+            try
+            {
+                result = MessageBox.Show("Вы действительно хотите удалить запись из базы данных?", "Удаление записи", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    unitsBindingSource.RemoveCurrent();
+                    unitsTableAdapter.Update(this.unitsAccountDataSet.Units);
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Таблица пуста", "Ошибка");
+                return;
+            }
+            
+        }
     }
 }

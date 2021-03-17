@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.запросыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.добавитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.изменитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.просмотрToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.удалитьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AddRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.ChangeRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.DeleteRecord = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.unitsAccountDataSet = new pract_20.unitsAccountDataSet();
@@ -65,57 +65,61 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(1067, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1067, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // запросыToolStripMenuItem
             // 
             this.запросыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.добавитьToolStripMenuItem,
-            this.изменитьToolStripMenuItem,
-            this.просмотрToolStripMenuItem,
-            this.удалитьToolStripMenuItem});
+            this.AddRecord,
+            this.ChangeRecord,
+            this.ShowRecord,
+            this.DeleteRecord});
             this.запросыToolStripMenuItem.Name = "запросыToolStripMenuItem";
-            this.запросыToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
+            this.запросыToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
             this.запросыToolStripMenuItem.Text = "Запросы";
             // 
-            // добавитьToolStripMenuItem
+            // AddRecord
             // 
-            this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.добавитьToolStripMenuItem.Text = "Добавить";
+            this.AddRecord.Name = "AddRecord";
+            this.AddRecord.Size = new System.Drawing.Size(180, 22);
+            this.AddRecord.Text = "Добавить";
+            this.AddRecord.Click += new System.EventHandler(this.AddRecord_Click);
             // 
-            // изменитьToolStripMenuItem
+            // ChangeRecord
             // 
-            this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.изменитьToolStripMenuItem.Text = "Изменить";
+            this.ChangeRecord.Name = "ChangeRecord";
+            this.ChangeRecord.Size = new System.Drawing.Size(180, 22);
+            this.ChangeRecord.Text = "Изменить";
+            this.ChangeRecord.Click += new System.EventHandler(this.ChangeRecord_Click);
             // 
-            // просмотрToolStripMenuItem
+            // ShowRecord
             // 
-            this.просмотрToolStripMenuItem.Name = "просмотрToolStripMenuItem";
-            this.просмотрToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.просмотрToolStripMenuItem.Text = "Просмотр";
+            this.ShowRecord.Name = "ShowRecord";
+            this.ShowRecord.Size = new System.Drawing.Size(180, 22);
+            this.ShowRecord.Text = "Просмотр";
+            this.ShowRecord.Click += new System.EventHandler(this.ShowRecord_Click);
             // 
-            // удалитьToolStripMenuItem
+            // DeleteRecord
             // 
-            this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
-            this.удалитьToolStripMenuItem.Text = "Удалить";
+            this.DeleteRecord.Name = "DeleteRecord";
+            this.DeleteRecord.Size = new System.Drawing.Size(180, 22);
+            this.DeleteRecord.Text = "Удалить";
+            this.DeleteRecord.Click += new System.EventHandler(this.DeleteRecord_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem1});
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.оПрограммеToolStripMenuItem.Text = "Справка";
             // 
             // оПрограммеToolStripMenuItem1
             // 
             this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
             this.оПрограммеToolStripMenuItem1.Text = "О программе";
             // 
             // unitsAccountDataSet
@@ -245,10 +249,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem запросыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem добавитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem изменитьToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem просмотрToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem удалитьToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AddRecord;
+        private System.Windows.Forms.ToolStripMenuItem ChangeRecord;
+        private System.Windows.Forms.ToolStripMenuItem ShowRecord;
+        private System.Windows.Forms.ToolStripMenuItem DeleteRecord;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
         private unitsAccountDataSet unitsAccountDataSet;
