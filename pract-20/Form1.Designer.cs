@@ -35,12 +35,11 @@
             this.ChangeRecord = new System.Windows.Forms.ToolStripMenuItem();
             this.ShowRecord = new System.Windows.Forms.ToolStripMenuItem();
             this.DeleteRecord = new System.Windows.Forms.ToolStripMenuItem();
+            this.GetTableByType = new System.Windows.Forms.ToolStripMenuItem();
+            this.GetTableByPlace = new System.Windows.Forms.ToolStripMenuItem();
+            this.ShowAllTable = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.unitsAccountDataSet = new pract_20.unitsAccountDataSet();
-            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unitsTableAdapter = new pract_20.unitsAccountDataSetTableAdapters.UnitsTableAdapter();
-            this.tableAdapterManager = new pract_20.unitsAccountDataSetTableAdapters.TableAdapterManager();
+            this.AboutUs = new System.Windows.Forms.ToolStripMenuItem();
             this.unitsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,10 +50,14 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unitsAccountDataSet = new pract_20.unitsAccountDataSet();
+            this.unitsTableAdapter = new pract_20.unitsAccountDataSetTableAdapters.UnitsTableAdapter();
+            this.tableAdapterManager = new pract_20.unitsAccountDataSetTableAdapters.TableAdapterManager();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsAccountDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsAccountDataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -75,7 +78,10 @@
             this.AddRecord,
             this.ChangeRecord,
             this.ShowRecord,
-            this.DeleteRecord});
+            this.DeleteRecord,
+            this.GetTableByType,
+            this.GetTableByPlace,
+            this.ShowAllTable});
             this.запросыToolStripMenuItem.Name = "запросыToolStripMenuItem";
             this.запросыToolStripMenuItem.Size = new System.Drawing.Size(72, 21);
             this.запросыToolStripMenuItem.Text = "Запросы";
@@ -83,64 +89,66 @@
             // AddRecord
             // 
             this.AddRecord.Name = "AddRecord";
-            this.AddRecord.Size = new System.Drawing.Size(180, 22);
+            this.AddRecord.Size = new System.Drawing.Size(229, 22);
             this.AddRecord.Text = "Добавить";
             this.AddRecord.Click += new System.EventHandler(this.AddRecord_Click);
             // 
             // ChangeRecord
             // 
             this.ChangeRecord.Name = "ChangeRecord";
-            this.ChangeRecord.Size = new System.Drawing.Size(180, 22);
+            this.ChangeRecord.Size = new System.Drawing.Size(229, 22);
             this.ChangeRecord.Text = "Изменить";
             this.ChangeRecord.Click += new System.EventHandler(this.ChangeRecord_Click);
             // 
             // ShowRecord
             // 
             this.ShowRecord.Name = "ShowRecord";
-            this.ShowRecord.Size = new System.Drawing.Size(180, 22);
+            this.ShowRecord.Size = new System.Drawing.Size(229, 22);
             this.ShowRecord.Text = "Просмотр";
             this.ShowRecord.Click += new System.EventHandler(this.ShowRecord_Click);
             // 
             // DeleteRecord
             // 
             this.DeleteRecord.Name = "DeleteRecord";
-            this.DeleteRecord.Size = new System.Drawing.Size(180, 22);
+            this.DeleteRecord.Size = new System.Drawing.Size(229, 22);
             this.DeleteRecord.Text = "Удалить";
             this.DeleteRecord.Click += new System.EventHandler(this.DeleteRecord_Click);
+            // 
+            // GetTableByType
+            // 
+            this.GetTableByType.Name = "GetTableByType";
+            this.GetTableByType.Size = new System.Drawing.Size(229, 22);
+            this.GetTableByType.Text = "Выборка по типу изделия";
+            this.GetTableByType.Click += new System.EventHandler(this.GetTableByType_Click);
+            // 
+            // GetTableByPlace
+            // 
+            this.GetTableByPlace.Name = "GetTableByPlace";
+            this.GetTableByPlace.Size = new System.Drawing.Size(229, 22);
+            this.GetTableByPlace.Text = "Выборка по цеху";
+            this.GetTableByPlace.Click += new System.EventHandler(this.GetTableByPlace_Click);
+            // 
+            // ShowAllTable
+            // 
+            this.ShowAllTable.Name = "ShowAllTable";
+            this.ShowAllTable.Size = new System.Drawing.Size(229, 22);
+            this.ShowAllTable.Text = "Показать всю таблицу";
+            this.ShowAllTable.Click += new System.EventHandler(this.ShowAllTable_Click);
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.оПрограммеToolStripMenuItem1});
+            this.AboutUs});
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
             this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(70, 21);
             this.оПрограммеToolStripMenuItem.Text = "Справка";
             // 
-            // оПрограммеToolStripMenuItem1
+            // AboutUs
             // 
-            this.оПрограммеToolStripMenuItem1.Name = "оПрограммеToolStripMenuItem1";
-            this.оПрограммеToolStripMenuItem1.Size = new System.Drawing.Size(158, 22);
-            this.оПрограммеToolStripMenuItem1.Text = "О программе";
-            // 
-            // unitsAccountDataSet
-            // 
-            this.unitsAccountDataSet.DataSetName = "unitsAccountDataSet";
-            this.unitsAccountDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // unitsBindingSource
-            // 
-            this.unitsBindingSource.DataMember = "Units";
-            this.unitsBindingSource.DataSource = this.unitsAccountDataSet;
-            // 
-            // unitsTableAdapter
-            // 
-            this.unitsTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.UnitsTableAdapter = this.unitsTableAdapter;
-            this.tableAdapterManager.UpdateOrder = pract_20.unitsAccountDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.AboutUs.Name = "AboutUs";
+            this.AboutUs.Size = new System.Drawing.Size(180, 22);
+            this.AboutUs.Text = "О программе";
+            this.AboutUs.Click += new System.EventHandler(this.AboutUs_Click);
             // 
             // unitsDataGridView
             // 
@@ -220,6 +228,26 @@
             this.dataGridViewTextBoxColumn8.HeaderText = "ПятницаКолво";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
             // 
+            // unitsBindingSource
+            // 
+            this.unitsBindingSource.DataMember = "Units";
+            this.unitsBindingSource.DataSource = this.unitsAccountDataSet;
+            // 
+            // unitsAccountDataSet
+            // 
+            this.unitsAccountDataSet.DataSetName = "unitsAccountDataSet";
+            this.unitsAccountDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // unitsTableAdapter
+            // 
+            this.unitsTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.UnitsTableAdapter = this.unitsTableAdapter;
+            this.tableAdapterManager.UpdateOrder = pract_20.unitsAccountDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,9 +265,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsAccountDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unitsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.unitsAccountDataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -254,7 +282,7 @@
         private System.Windows.Forms.ToolStripMenuItem ShowRecord;
         private System.Windows.Forms.ToolStripMenuItem DeleteRecord;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem AboutUs;
         private unitsAccountDataSet unitsAccountDataSet;
         private System.Windows.Forms.BindingSource unitsBindingSource;
         private unitsAccountDataSetTableAdapters.UnitsTableAdapter unitsTableAdapter;
@@ -269,6 +297,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.ToolStripMenuItem GetTableByType;
+        private System.Windows.Forms.ToolStripMenuItem GetTableByPlace;
+        private System.Windows.Forms.ToolStripMenuItem ShowAllTable;
     }
 }
 

@@ -73,9 +73,42 @@ namespace pract_20
             }
             
         }
+
+        private void GetTableByType_Click(object sender, EventArgs e)
+        {
+            ShowByType show = new ShowByType();
+            show.ShowDialog();
+            if (ID.resolve == true)
+            {
+                this.unitsTableAdapter.FillByType(this.unitsAccountDataSet.Units, ID.type);
+            }           
+        }
+
+        private void GetTableByPlace_Click(object sender, EventArgs e)
+        {
+            ShowByPlace show = new ShowByPlace();
+            show.ShowDialog();
+            if (ID.resolve == true)
+            {
+                this.unitsTableAdapter.FillByPlace(this.unitsAccountDataSet.Units, ID.place);
+            }            
+        }
+
+        private void ShowAllTable_Click(object sender, EventArgs e)
+        {
+            this.unitsTableAdapter.Fill(this.unitsAccountDataSet.Units);
+        }
+
+        private void AboutUs_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Филяк, ИСП-31, вариант 1. Учет изделий, собранных в цехе за неделю. База данных должна содержать следующую информацию: фамилию, имя, отчество сборщика, количество изготовленных изделий за каждый день недели раздельно, название цеха, а также тип изделия и его стоимость.", "О программе");
+        }
     }
     public static class ID
     {
         public static string id;
+        public static string type;
+        public static string place;
+        public static bool resolve;
     }
 }

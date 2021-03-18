@@ -173,6 +173,12 @@
             // 
             this.типИзделияComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.unitsBindingSource, "ТипИзделия", true));
             this.типИзделияComboBox.FormattingEnabled = true;
+            this.типИзделияComboBox.Items.AddRange(new object[] {
+            "Стол",
+            "Стул",
+            "Шкаф",
+            "Кресло",
+            "Диван"});
             this.типИзделияComboBox.Location = new System.Drawing.Point(23, 179);
             this.типИзделияComboBox.Name = "типИзделияComboBox";
             this.типИзделияComboBox.Size = new System.Drawing.Size(210, 23);
